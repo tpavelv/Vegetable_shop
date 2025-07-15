@@ -1,0 +1,21 @@
+.catalog {
+  background-color: red;
+  padding: 60px 80px 119px 80px;
+  background-color: #e9ecef;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 49px;
+  }
+}
+.product-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
+  column-gap: 24px;
+  row-gap: 28px;
+  li {
+    list-style: none;
+  }
+}

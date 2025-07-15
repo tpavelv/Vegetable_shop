@@ -1,0 +1,15 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  padding: 20px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    background-color: #54b46a;
+  }
+}
