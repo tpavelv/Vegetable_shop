@@ -24,7 +24,8 @@
       {
         "name": "typescript-plugin-css-modules"
       }
-    ]
+    ],
+    "types": ["vitest"]
   },
   "include": ["src/declaration.d.ts", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]

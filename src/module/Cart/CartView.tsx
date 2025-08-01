@@ -6,15 +6,16 @@ import type { ProductWithCount } from '../../types'
 interface CartViewProps {
   products: ProductWithCount[]
   totalPrice: number
+  testid?: string
 }
 
-export const CartView = ({ products, totalPrice }: CartViewProps) => {
+export const CartView = ({ products, totalPrice, testid }: CartViewProps) => {
   if (!products.length) {
     return <div className={styles.cart}></div>
   }
 
   return (
-    <div className={styles.cart}>
+    <div className={styles.cart} data-testid={testid}>
       <ul>
         {products.map((product) => {
           const { name, price, image, count, id } = product

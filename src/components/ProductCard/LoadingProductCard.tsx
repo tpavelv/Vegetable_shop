@@ -3,7 +3,7 @@ import { CustomLoader } from '../../UI/loader/loader'
 
 export const LoadingProductCard = () => {
   return (
-    <Card padding="md" radius="lg" w={302} h={414}>
+    <Card padding="md" radius="lg" w={302} h={414} data-testid="loading-product-card">
       <Card.Section>
         <Box p="md" h={276}>
           <CustomLoader />

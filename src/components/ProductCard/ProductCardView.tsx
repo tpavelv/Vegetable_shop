@@ -26,7 +26,7 @@ export const ProductCardView = ({
   onAction,
 }: ProductCardViewProps) => {
   return (
-    <div>
+    <div data-testid={`card-${title}`}>
       <Card padding="md" radius="lg" w={302} h={414}>
         <Card.Section>
           <Box p="md">

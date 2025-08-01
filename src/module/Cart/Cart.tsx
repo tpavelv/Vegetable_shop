@@ -1,9 +1,6 @@
 import styles from './Cart.module.scss'
-
 import { CartView } from './CartView'
-
 import emptyCart from '../../assets/images/cart_empty.svg'
-
 import { useCart } from '../../hooks/useCartContext/useCart'
 
 export const Cart = () => {
@@ -20,5 +17,5 @@ export const Cart = () => {
 
   const calculateTotalPrice = cartData.reduce((acc, { count, price }) => acc + count * price, 0)
 
-  return <CartView products={cartData} totalPrice={calculateTotalPrice} />
+  return <CartView products={cartData} totalPrice={calculateTotalPrice} testid="cart-filled" />
 }
