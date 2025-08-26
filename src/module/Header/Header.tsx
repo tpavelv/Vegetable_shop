@@ -3,11 +3,23 @@ import { Logo } from '../../UI/Logo/Logo'
 import { CustomButton } from '../../UI/CustomButton/CustomButton'
 import { IconShoppingCart } from '@tabler/icons-react'
 
-import { useCart } from '../../hooks/useCartContext/useCart'
+// import { useCart } from '../../hooks/useCartContext/useCart'
+
+import { onToggleCartOpen } from '../../reducers/UiSlice'
+import { useTypedDispatch, useTypedSelector } from '../../hooks/redux/redux'
 
 export const Header = () => {
-  const { cartData, onToggleCartOpen } = useCart()
+  const dispatch = useTypedDispatch()
 
+  const handleToggleCart = () => {
+    dispatch(onToggleCartOpen())
+  }
+
+  // const {
+  //   cartData,
+  //   //  onToggleCartOpen
+  // } = useCart()
+  const cartData = useTypedSelector((state) => state.cart.cartData)
   return (
     <header className={styles.header}>
       <Logo />
@@ -16,7 +28,7 @@ export const Header = () => {
         px={40}
         py={10}
         icon={<IconShoppingCart size={20} />}
-        onClick={onToggleCartOpen}
+        onClick={handleToggleCart}
       >
         Cart
       </CustomButton>

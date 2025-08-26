@@ -3,10 +3,10 @@ import { Cart } from '../../module/Cart'
 import { Catalog } from '../../module/Catalog/Catalog'
 
 import { useCart } from '../../hooks/useCartContext/useCart'
+import { useTypedSelector } from '../../hooks/redux/redux'
 
 export const Shop = () => {
-  const { cartOpen } = useCart()
-
+  const cartOpen = useTypedSelector((state) => state.ui.cartOpen)
   return (
     <>
       <Header />

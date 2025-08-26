@@ -2,9 +2,8 @@ import { useCount } from '../../hooks/useCount/useCount'
 import { ProductCardView } from './ProductCardView'
 import { LoadingProductCard } from './LoadingProductCard'
 
-import { useCart } from '../../hooks/useCartContext/useCart'
 import { Product } from '../../types'
-
+import { useCartActions } from '../../hooks/useCartActions/useCartActions'
 interface ProductCardProps {
   product: Product | null
   isLoading: boolean
@@ -13,8 +12,7 @@ interface ProductCardProps {
 export const ProductCard = ({ product, isLoading }: ProductCardProps) => {
   const { count, onIncrement, onDecrement } = useCount(1)
 
-  const { onAddToCard } = useCart()
-
+  const { addToCart } = useCartActions()
   if (isLoading || !product) {
     return <LoadingProductCard />
   } else {
@@ -30,7 +28,7 @@ export const ProductCard = ({ product, isLoading }: ProductCardProps) => {
         count={count}
         onIncrement={onIncrement}
         onDecrement={onDecrement}
-        onAction={() => onAddToCard(id, count)}
+        onAction={() => addToCart(id, count)}
       />
     )
   }

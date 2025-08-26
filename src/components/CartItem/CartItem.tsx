@@ -1,6 +1,6 @@
 import { CartItemView } from './CartItemView'
 import { useCart } from '../../hooks/useCartContext/useCart'
-
+import { useCartActions } from '../../hooks/useCartActions/useCartActions'
 interface CartItemProps {
   image: string
   title: string
@@ -11,8 +11,8 @@ interface CartItemProps {
 }
 
 export const CartItem = ({ image, title, unitProduct, price, productCount, id }: CartItemProps) => {
-  const { incrementProductCount, decrementProductCount } = useCart()
-
+  // const { incrementProductCount, decrementProductCount } = useCart()
+  const { incProdCount, decProdCount } = useCartActions()
   return (
     <CartItemView
       image={image}
@@ -20,8 +20,8 @@ export const CartItem = ({ image, title, unitProduct, price, productCount, id }:
       unitProduct={unitProduct}
       price={price}
       productCount={productCount}
-      onIncrement={() => incrementProductCount(id)}
-      onDecrement={() => decrementProductCount(id)}
+      onIncrement={() => incProdCount(id)}
+      onDecrement={() => decProdCount(id)}
     />
   )
 }

@@ -2,6 +2,8 @@ import { createRoot } from 'react-dom/client'
 import { MantineProvider } from '@mantine/core'
 import { DataContextProvider } from '../src/context/DataProvider'
 import { CartContextProvider } from '../src/context/CartContext'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 import '@mantine/core/styles.css'
 import App from './App/App'
@@ -38,10 +40,12 @@ const theme = {
 }
 root.render(
   <MantineProvider defaultColorScheme="light" theme={theme}>
-    <DataContextProvider>
-      <CartContextProvider>
-        <App />
-      </CartContextProvider>
-    </DataContextProvider>
+    {/* <DataContextProvider>
+      <CartContextProvider> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
+    {/* </CartContextProvider>
+    </DataContextProvider> */}
   </MantineProvider>
 )
