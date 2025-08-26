@@ -14,7 +14,7 @@ export const Stepper = ({ count, increment, decrement }: StepperProps) => {
         <IconMinus size={12} stroke={5} color="black" />
       </ActionIcon>
 
-      <Text>{count}</Text>
+      <Text data-testid="product-count">{count}</Text>
 
       <ActionIcon variant="light" color="gray" size={30} radius="md" onClick={increment}>
         <IconPlus size={12} stroke={5} color="black" />

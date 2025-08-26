@@ -1,5 +1,4 @@
 import { CartItemView } from './CartItemView'
-import { useCart } from '../../hooks/useCartContext/useCart'
 import { useCartActions } from '../../hooks/useCartActions/useCartActions'
 interface CartItemProps {
   image: string
@@ -11,7 +10,6 @@ interface CartItemProps {
 }
 
 export const CartItem = ({ image, title, unitProduct, price, productCount, id }: CartItemProps) => {
-  // const { incrementProductCount, decrementProductCount } = useCart()
   const { incProdCount, decProdCount } = useCartActions()
   return (
     <CartItemView

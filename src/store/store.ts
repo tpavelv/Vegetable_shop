@@ -3,7 +3,7 @@ import uiReducer from '../reducers/UiSlice'
 import cartReducer from '../reducers/CartSlice'
 import catalogReducer from '../reducers/CatalogSlice'
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   ui: uiReducer,
   catalog: catalogReducer,
   cart: cartReducer,

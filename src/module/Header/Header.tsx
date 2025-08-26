@@ -15,10 +15,6 @@ export const Header = () => {
     dispatch(onToggleCartOpen())
   }
 
-  // const {
-  //   cartData,
-  //   //  onToggleCartOpen
-  // } = useCart()
   const cartData = useTypedSelector((state) => state.cart.cartData)
   return (
     <header className={styles.header}>

@@ -8,7 +8,7 @@ export const CartFooter = ({ totalPrice }: CartFooterProps) => {
   return (
     <div className={styles.wrapper}>
       <span className={styles.title}>Total</span>
-      <span className={styles.amount}>{`${totalPrice} $`}</span>
+      <span className={styles.amount} data-testid="total-count">{`${totalPrice} $`}</span>
     </div>
   )
 }

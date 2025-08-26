@@ -1,5 +1,4 @@
 import { CatalogView } from './CatalogView'
-import { useDataContext } from '../../hooks/useDataContext/useDataContext'
 import { useTypedDispatch, useTypedSelector } from '../../hooks/redux/redux'
 import { useEffect } from 'react'
 import { getData } from '../../reducers/CatalogThunk'
@@ -10,7 +9,7 @@ export const Catalog = () => {
   const dispatch = useTypedDispatch()
   useEffect(() => {
     dispatch(getData())
-  }, [])
+  }, [dispatch])
 
   const { data, loading } = useTypedSelector((state) => state.catalog)
 

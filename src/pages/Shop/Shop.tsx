@@ -2,7 +2,6 @@ import { Header } from '../../module/Header'
 import { Cart } from '../../module/Cart'
 import { Catalog } from '../../module/Catalog/Catalog'
 
-import { useCart } from '../../hooks/useCartContext/useCart'
 import { useTypedSelector } from '../../hooks/redux/redux'
 
 export const Shop = () => {
